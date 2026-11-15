@@ -17,8 +17,8 @@ npm run dev
 
 ## 소스 구조
 
-- `src/App.jsx`: 페이지 전체 레이아웃
-- `src/components/CourseList.jsx`: State 및 목록, 삭제 로직, **TODO 1/2**
+- `src/App.jsx`: 페이지 전체 레이아웃 -> 앱의 전체적인 틀을 잡고 메인 페이지를 보여줌.
+- `src/components/CourseList.jsx`: State 및 목록, 삭제 로직, **TODO 1/2** -> 과목 리스트 상태 update관리를 하고 삭제, 완료 등의 로직이 있음.
 - `src/components/CourseItem.jsx`: Props로 데이터를 받고 이벤트 콜백 호출
 - `src/data/courses.js`: 초기 과목 데이터
 - `src/App.css`: 전체 디자인
@@ -31,10 +31,15 @@ npm run dev
    -> 제목 My Course to - do Manager로 변경함.
    -> 배경색 변경함, tag 색 변경, 버튼 색 변경
 3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트).
+   todo1 -> newName.trim()을 이용해 빈 값 입력을 방지하고 Date.now()로 새로운 과목 객체를 만들어서 setCourses 상태로 업데이트.
 4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.
+   todo2 -> 체크박스 클릭 시 handleToggle함수 실행하게 한 후에 map()과 스프레드 연산자를 이용해서 선택한 과목 상태를 완료되게 함.
 5. 선택: 검색/필터, 이름 수정 기능 추가.
 6. GitHub에 Commit/Push 후 Vercel에 배포합니다.
 7. README에 프로젝트 소개, 주요 코드 분석 2개, 변경 내용, Weekly Review, GitHub URL, Vercel URL을 정리합니다.
+   sample project : https://github.com/olzn111/week11_sample_project
+   GitHub URL : https://github.com/2026-2-OSS/assign11-c01-22500199
+   Vercel URL : https://week11-sample-project-coral.vercel.app/
 
 ## 확인할 질문
 
@@ -45,3 +50,9 @@ npm run dev
 - 브라우저 새로고침 시 데이터가 초기화되는 이유는? (DB/localStorage 없음)
 
 > 교육 목적의 로컬 State 앱입니다. 서버 API 및 데이터베이스는 사용하지 않습니다.
+
+
+
+리액트 컴포넌트 간 데이터 전달방식 Props와 상태 관리 useState의 역할, 배열 map 활용법을 알게 되었다.
+배열을 수정하지 않고 새로운 배열을 만들어 상태를 업데이트하는 불변성의 개념을 알 수 있었다.
+과목을 삭제할 떄는 filter()를 이용해서 (id제외) 배열을 만들고 특정 속성만 변경할 수 있게 map()을 사용하여 리엑트에서 배열 데이터를 다루는 법을 알게 되었다.
