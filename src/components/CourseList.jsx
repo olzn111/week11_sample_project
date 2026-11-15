@@ -17,11 +17,30 @@ export default function CourseList() {
   function handleAdd(event) {
     event.preventDefault();
     // TODO: 빈 입력 검사, 새 과목 객체 생성, setCourses 호출, 입력창 초기화
-  }
+    if (!newName.trim()) {
+      alert("과목명을 입력해주세요!");
+      return;
+    }
 
+    const newCourse = {
+      id: Date.now(),
+      name: newName.trim(),
+      category: "Elective",
+      completed: false,
+    };
+
+    setCourses((previous) => [newCourse, ...previous]); // 새 과목 추가
+
+    setNewName("");
+  }
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
   function handleToggle(id) {
     // TODO: map과 spread(...)를 사용하여 해당 id의 completed를 반전
+    setCourses((previous) =>
+      previous.map((course) =>
+        course.id === id ? { ...course, completed: !course.completed } : course,
+      ),
+    );
   }
 
   const doneCount = courses.filter((course) => course.completed).length;
