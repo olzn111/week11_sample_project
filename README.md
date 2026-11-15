@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+![alt text](image.png)
+
 브라우저에 표시되는 Local URL에 접속하세요. 빌드 테스트: `npm run build`.
 
 ## 소스 구조
@@ -25,6 +27,9 @@ npm run dev
 
 1. 코드를 실행하고 목록 조회·삭제를 확인합니다.
 2. 초기 과목 5개 이상, 제목, CSS 3곳 이상 변경합니다.
+   -> 과목 5개를 EAP 와 Discrete Mathematics와 Computer Architecture로 세가지 변경하였고 실제 듣는 과목들은 원래대로 두었음.
+   -> 제목 My Course to - do Manager로 변경함.
+   -> 배경색 변경함, tag 색 변경, 버튼 색 변경
 3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트).
 4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.
 5. 선택: 검색/필터, 이름 수정 기능 추가.
